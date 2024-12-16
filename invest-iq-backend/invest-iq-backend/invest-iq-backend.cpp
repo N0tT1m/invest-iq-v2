@@ -7,12 +7,12 @@ using Logger::FileLogger;
 
 int main()
 {
-    std::string file_name = "file.txt";
+    std::string file_name = "E:\\workspace\\trading-apps\\invest-iq-v2\\invest-iq-backend\\invest-iq-backend\\file.txt";
 
     FileLogger file_logger = FileLogger(file_name);
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
+// Run program: Ctrl + F5 or Debug > Start Without Debugging menuw
 // Debug program: F5 or Debug > Start Debugging menu
 
 // Tips for Getting Started: 

@@ -5,6 +5,11 @@ VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "invest-iq-backend", "invest-iq-backend\invest-iq-backend.vcxproj", "{67EADC96-5F1D-42B0-A9A4-2CBC9E59115D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1013DCC4-5E54-4FBD-A57E-57874706B5F6}"
+	ProjectSection(SolutionItems) = preProject
+		invest-iq-backend\spdlog.lib = invest-iq-backend\spdlog.lib
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64

@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include "spdlog/spdlog.h"
 using namespace std;
 
 namespace Logger {
@@ -15,10 +16,13 @@ namespace Logger {
 			};
 
 			void LogInfo(std::string) {
-				std::ofstream outputFile(file_name);
-
-				if (outputFile.is_open()) {
-
+				try
+				{
+					auto logger = spdlog::basic_logger_mt("basic_logger", "logs/basic-log.txt");
+				}
+				catch (const spdlog::spdlog_ex& ex)
+				{
+					std::cout << "Log init failed: " << ex.what() << std::endl;
 				}
 			}
 
