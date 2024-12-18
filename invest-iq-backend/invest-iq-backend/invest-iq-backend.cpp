@@ -7,9 +7,12 @@ using Logger::FileLogger;
 
 int main()
 {
-    std::string file_name = "E:\\workspace\\trading-apps\\invest-iq-v2\\invest-iq-backend\\invest-iq-backend\\file.txt";
+    auto logger_name{ "trading-logger" };
+    auto msg{ "Hello World!" };
+    auto level{ spdlog::level::level_enum::err };
 
-    FileLogger file_logger = FileLogger(file_name);
+    FileLogger file_logger = FileLogger(logger_name);
+    file_logger.Log(msg, level);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menuw

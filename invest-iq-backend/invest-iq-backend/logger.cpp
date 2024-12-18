@@ -1,24 +1,28 @@
 #include <iostream>
 #include <fstream>
 #include "spdlog/spdlog.h"
+#include "spdlog/sinks/basic_file_sink.h" // support for basic file logging
+#include "spdlog/sinks/rotating_file_sink.h" // support for rotating file logging
+
 using namespace std;
 
 namespace Logger {
 	class FileLogger {
 		public:
 			FileLogger() = default;
-			FileLogger(std::string file_name) : file_name{file_name} {
-				cout << file_name;
+			FileLogger(std::string logger_name) : logger_name{ logger_name} {
+				cout << logger_name;
 			};
 
 			~FileLogger() {
-				file_name.clear();
+				logger_name.clear();
 			};
 
-			void LogInfo(std::string) {
+			void Log(std::string msg, spdlog::level::level_enum level) {
 				try
 				{
-					auto logger = spdlog::basic_logger_mt("basic_logger", "logs/basic-log.txt");
+					auto logger = spdlog::basic_logger_mt(logger_name, "logs/trading-log.txt");
+					logger->log(level, msg);
 				}
 				catch (const spdlog::spdlog_ex& ex)
 				{
@@ -27,6 +31,6 @@ namespace Logger {
 			}
 
 		private:
-			std::string file_name;
+			std::string logger_name;
 	};
 }
